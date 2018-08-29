@@ -45,7 +45,7 @@ class SwitchTableViewCell: UITableViewCell {
         nameLabel.text = alarm?.name
         timeLabel.text = alarm?.fireTimeAsString
         guard let alarmEnabled = alarm?.enabled else {return}
-        alarmSwitch.isOn = alarmEnabled
+        alarmSwitch.setOn(alarmEnabled, animated: true)
         
     }
 

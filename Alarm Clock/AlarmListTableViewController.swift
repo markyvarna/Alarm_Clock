@@ -37,7 +37,7 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
             let alarm = AlarmController.shared.alarms[indexPath.row]
         cell?.timeLabel.text = alarm.fireTimeAsString
         cell?.nameLabel.text = alarm.name
-        cell?.alarmSwitch.isEnabled = alarm.enabled
+        cell?.alarmSwitch.setOn(alarm.enabled, animated: true)
         
         cell?.delegate = self
         

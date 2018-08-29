@@ -87,6 +87,9 @@ class AlarmDetailTableViewController: UITableViewController {
         
         if let alarm = alarm {
             AlarmController.shared.update(alarm: alarm, fireDate: datePicker.date, name: titleText, enabled: alarmIsOn)
+            if alarmIsOn == false {
+                AlarmController.shared.cancelUserNotifications(for: alarm)
+            }
         } else {
             AlarmController.shared.addAlarm(fireDate: datePicker.date, name: titleText, enabled: alarmIsOn, uuid: titleText)
         }
